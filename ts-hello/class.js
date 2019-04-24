@@ -1,5 +1,5 @@
-var Point = /** @class */ (function () {
-    function Point(x, y) {
+class Point {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
     }
@@ -11,47 +11,37 @@ var Point = /** @class */ (function () {
         this.x = x
         this.y = y
     } */
-    Point.prototype.draw = function () {
+    draw() {
         console.log(this.x + ' ' + this.y);
-    };
-    return Point;
-}());
+    }
+}
 // let point: Point  //this process will fail b/c
 // point.draw()      //point is using a custom type Point
 //we need to manually allocate memory to it
-var point = new Point(3, 5); // we need to use `new` keyword
+let point = new Point(3, 5); // we need to use `new` keyword
 point.draw();
-var Person = /** @class */ (function () {
+class Person {
     //as convention, use _ to name a property of a class
-    function Person(_name, _age) {
+    constructor(_name, _age) {
         this._name = _name;
         this._age = _age;
         //We can use this simpler constructor to declare object
         //no need to use this.name = name etc
     }
-    Person.prototype.introduction = function () {
-        console.log(this._name + " is " + this._age + " years old");
-    };
-    Object.defineProperty(Person.prototype, "name", {
-        //with get and set keyword, we can use those properties as field
-        get: function () {
-            return this._name;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(Person.prototype, "age", {
-        set: function (value) {
-            if (value < 0)
-                throw new Error(value + " can't be less than 0");
-            this._age = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return Person;
-}());
-var tom = new Person('Tom', 23);
+    introduction() {
+        console.log(`${this._name} is ${this._age} years old`);
+    }
+    //with get and set keyword, we can use those properties as field
+    get name() {
+        return this._name;
+    }
+    set age(value) {
+        if (value < 0)
+            throw new Error(`${value} can't be less than 0`);
+        this._age = value;
+    }
+}
+let tom = new Person('Tom', 23);
 tom.introduction();
 console.log(tom.name);
 tom.age = -2; // <- this throws an error 
