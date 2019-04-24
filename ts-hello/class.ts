@@ -1,6 +1,6 @@
 class Point {
-    private x: number //by default, those are public
-    private y: number // y: number means y is public
+     x: number //by default, those are public
+     y: number // y: number means y is public
 
     constructor(x:number, y:number) {
         this.x = x
