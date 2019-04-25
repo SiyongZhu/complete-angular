@@ -10,6 +10,7 @@ import { CoursesService } from './courses.service';
                 {{ course }}
             </li>
         </ul>   
+        <button class="btn btn-primary">Save</button>
     ` //whenever html has <courses>, template will be put inside of it
 })
 export class CourseComponent {
