@@ -3,4 +3,8 @@
    License: none (public domain)
 */
 
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+	padding: 20px;
+}
