@@ -10,6 +10,8 @@ import { AuthorComponent } from './author/author.component';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { SummaryPipe } from './pipe-example/summary.pipe';
 import { StarComponent } from './star/star.component';
+import { TitleInputComponent } from './title-input/title-input.component';
+import { ConvertPipe } from './title-input/convert.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { StarComponent } from './star/star.component';
     AuthorComponent,
     PipeExampleComponent,
     SummaryPipe,
-    StarComponent
+    StarComponent,
+    TitleInputComponent,
+    ConvertPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<input type="text" (keyup)="InputMovieTitle($event)"><br/>
+{{ movieTitle | convert }} <br/>
+
+<!-- Or use two way binding to bind value of input -->
+<input type="text" [(ngModel)]="title"> <br/>
+{{ title | convert }}
