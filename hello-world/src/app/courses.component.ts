@@ -16,7 +16,7 @@ import { CoursesService } from './courses.service';
         <input #email (keyup.enter)="inputKeyUp(email.value)" /> <br/>
         <input [(ngModel)]="name" (keyup.enter)="TwoWayBind()" />
     ` //whenever html has <courses>, template will be put inside of it
-      // <button> shows class binding and style binding
+      // <button> shows class binding and style binding, active is a type of class
       // <input> examples are to show event filtering, template variable and two-way binding
       // use ngModel is the recommended method approach to bind DOM value to variable
 })
