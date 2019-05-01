@@ -1,0 +1,11 @@
+<!-- pipe is to modify the output of the value before |  -->
+<!-- uppercase change title to be all uppercase -->
+{{ course.title | uppercase }} <br/>  
+<!-- number change format to be xx,xxx -->
+{{ course.students | number }} <br/>
+<!-- 2.1-1 means 2 digit before decimal place and 1 decimal place  -->
+{{ course.rating | number: '2.1-1'}} <br/>
+{{ course.price | currency:'CAD':'symbol':'3.2-2'}} <br/>
+{{ course.releaseDate | date:'shortDate' }} <br/>
+<!-- we can use custom pipe as well, we can create a summary.pipe file -->
+{{ text | summary:50}} <br/> 

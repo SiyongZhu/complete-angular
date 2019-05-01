@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './courses.component';
 import { CoursesService } from './courses.service';
 import { AuthorComponent } from './author/author.component';
-import { AuthorService } from './author.service';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { SummaryPipe } from './pipe-example/summary.pipe';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    AuthorComponent
+    AuthorComponent,
+    PipeExampleComponent,
+    SummaryPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
