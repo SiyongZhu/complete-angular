@@ -10,3 +10,14 @@
   (change) is an output, defined by @output from favorite.component.ts 
   $event represents any value passed from component output, i.e -->
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+<bootstrap-panel>
+  <!-- we can use <bootstrap-panel [heading]="heading" ... > to inject value, but is too entangled -->
+  <!-- element inside class replaces <ng-content> inside <bootstrap-panel> -->
+  <div class="heading">Heading</div>
+  <!-- use ng-container, we can replace ng-content withour <div> -->
+  <ng-container class="heading">I am Heading</ng-container> 
+  <div class="body">
+    <h2>Body</h2>
+    <p>Here is the body</p>
+  </div>
+</bootstrap-panel>
