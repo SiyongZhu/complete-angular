@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { concat } from 'rxjs';
 
 @Component({
   selector: 'favorite',
   templateUrl: './favorite.component.html',
-  styleUrls: ['./favorite.component.css']
+  styleUrls: ['./favorite.component.css'],
+  // encapsulation: ViewEncapsulation.Emulated //ViewEncapsulation creates effect same as shadow DOM, 
+                              //the style will be constraint to this "favorite" DOM (not need to set, it is default)
 })
 export class FavoriteComponent {
 
