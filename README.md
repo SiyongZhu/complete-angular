@@ -1,12 +1,26 @@
 # complete-angular
 
 ## For ts-hello
-`run tsc main.js` will generate a main.js file\
+`tsc main.js` will generate a main.js file\
 `node main.js` will run the javascript file
 
 `tsc *.ts --target ES5 && node like_sim.js`
 
 This is the tutorial from Udemy The Complete Angular Course: Beginner to Advanced
+
+**Install Angular to Mac**
+I have some issue install angular on Mac, follow the steps in here to resolve installation issues
+
+First, download node js package from node js website, install to Mac
+Then run the following commands
+```
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+add following to ~/.bash_profile
+export PATH="~/.npm-global/bin:$PATH"
+source ~/.bash_profile
+npm install -g @angular/cli
+```
 
 ## Development server
 
