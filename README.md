@@ -21,9 +21,12 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `npm install bootstrap --save` to generate a bootstrap module in node_module folder \
 Run `npm install --save font-awesome angular-font-awesome` to generate font-awesome module
 
-## Install
+## Check modules and versions
 
-Run `npm install` to install node-modules. 
+## Install modules and check versions
+check package.json to see if libraries are installed and versions are matched\
+Run `npm install` to install node-modules.
+
 
 ## Build
 
