@@ -1,0 +1,13 @@
+
+.fa-heart{
+    padding-left: 50px;
+    cursor: pointer
+}
+
+.not-highlighted{
+    color: rgb(212, 193, 193)
+}
+
+.highlighted{
+    color: rgb(202, 13, 114)
+}
