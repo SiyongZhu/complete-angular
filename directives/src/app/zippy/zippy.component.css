@@ -1,0 +1,11 @@
+.zippy{
+    border: 1px solid rgb(201, 185, 185);
+    border-radius: 2px;
+    padding: 20px;
+    
+}
+
+.zippy-heading{
+    font-weight: bold;
+    user-select: none;
+}

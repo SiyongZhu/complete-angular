@@ -1,0 +1,14 @@
+<div class="zippy">
+  <div class="zippy-heading">
+      {{title}} <span class="fa"
+                      [ngClass] = "{
+                        'fa-angle-down': !isExpanded,
+                        'fa-angle-up': isExpanded
+                      }" 
+                      (click)=onExpand()></span>
+  </div>
+  <div *ngIf="isExpanded">
+    <ng-content></ng-content>
+  </div>
+</div>
+
