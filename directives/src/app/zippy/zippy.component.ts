@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'zippy',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zippy.component.css']
 })
 export class ZippyComponent implements OnInit {
+  @Input("title") title: string
+  isExpanded: boolean = false
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
+  }
+
+  onExpand(){
+    this.isExpanded = !this.isExpanded
+    console.log("is expanding")
   }
 
 }
