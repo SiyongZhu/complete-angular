@@ -18,7 +18,7 @@ export class InputFormatDirective {
     if(this.format == 'lowercase')
       this.el.nativeElement.value = value.toLowerCase()
     else
-    this.el.nativeElement.value = value.toUpperCase()
+      this.el.nativeElement.value = value.toUpperCase()
   }
   
 

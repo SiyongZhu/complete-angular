@@ -1,0 +1,15 @@
+<form>
+  
+  <div class="form-group">
+      <label for="firstName">First Name</label>
+      <!-- Need to import FormsModule when use ngModel in Forms-->
+      <!-- adding ngModel to a form directly in a <input>, it will create a model and associate with this input field under the hood  -->
+      <!-- Need to use "name" attribute to distinguish control object -->
+      <input ngModel name="userName" id="firstName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea name="" id="comment" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
