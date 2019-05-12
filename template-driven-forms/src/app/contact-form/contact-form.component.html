@@ -1,15 +1,68 @@
-<form>
-  
+<form #f="ngForm" (ngSubmit)="submit(f)"> <!-- ngForm is automatically applied to <form>, which includes output ngSubmit. We can use template variable to fetch ngForm-->
+  <div ngModelGroup="contact" #contact="ngModelGroup"> 
+
+  </div>
   <div class="form-group">
       <label for="firstName">First Name</label>
-      <!-- Need to import FormsModule when use ngModel in Forms-->
-      <!-- adding ngModel to a form directly in a <input>, it will create a model and associate with this input field under the hood  -->
-      <!-- Need to use "name" attribute to distinguish control object -->
-      <input ngModel name="userName" id="firstName" type="text" class="form-control">
-  </div>
+      <!-- Need to import FormsModule when use ngModel in Forms
+           Adding ngModel to a form directly in a <input>, it will create a model and associate with this input field under the hood 
+           Need to use "name" attribute to distinguish control object 
+           Assign ngModel to template variable; it contains property "control", which contains "dirty, touched valid, value" etc -->
+
+      <input required minlength="3" maxlength="10" pattern="[A-z]+" 
+              ngModel name="userName" 
+              #templateVar="ngModel" (change)="log(templateVar)" 
+              id="firstName" type="text" class="form-control">
+      <!-- below is the error message, using template variable "templateVar" to get valid status and show error msg only when input field is touched -->
+      <div class="alert alert-danger" *ngIf="templateVar.touched && !templateVar.valid">
+        <div *ngIf="templateVar.errors.required">
+            Name cannot be empty
+        </div>
+        <!--  use ngModel to fetch parameters such as errors -->
+        <div *ngIf="templateVar.errors.minlength">
+          Name needs minmium {{ templateVar.errors.minlength.requiredLength }} characters
+        </div> 
+        <div *ngIf="templateVar.errors.pattern">
+          Name doesn't fit the pattern
+        </div>
+      </div>
+    </div>
   <div class="form-group">
     <label for="comment">Comment</label>
-    <textarea name="" id="comment" cols="30" rows="10" class="form-control"></textarea>
+    <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ngModel name="isSubscribed"> Subscribe to mailing list
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select ngModel name="contactMethod" id="contactMethod" class="form-control"> <!-- add "multiple" attribute to allow mulit-selection -->
+      <option value=""></option> <!-- set a default selection -->
+      <!-- <option *ngFor="let method of contactMethods" [value]="method.id">{{ method.name }}</option> -->
+      <option *ngFor="let method of contactMethods" [ngValue]="method">{{ method.name }}</option> <!-- use ngValue to bind an actual object-->
+    </select>
+  </div>
+  <!-- <div class="radio">
+    <label>
+      <input ngModel type="radio" name="contactMethod" value="1">
+      Email
+    </label>
+  </div>
+  <div class="radio">
+      <label>
+        <input ngModel type="radio" name="contactMethod" value="2">
+        Phone
+      </label>
+  </div> -->
+  <div *ngFor="let method of contactMethods" class="radio">
+      <label>
+        <input ngModel name="contactMethod" type="radio" [value]="method.id"> {{ method.name }}
+      </label>
+    </div>
+  <p>
+    {{ f.value | json }} <!-- f is the template variable in <form>, which holds ngForm-->
+  </p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>

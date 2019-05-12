@@ -5,13 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent{
+  log(x) {console.log(x)}
 
-  constructor() { }
-
-  ngOnInit() {
+  contactMethods = [
+    {id:1, name: 'Email'},
+    {id:2, name: 'Home'}
+  ]
+  submit(f) {
+    console.log(f)
+    console.log(f.value)
   }
 
-  log(x) {console.log(x)}
 
 }
