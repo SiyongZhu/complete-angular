@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PostService } from '../services/post.service';
-import { HttpResponse } from '@angular/common/http';
+import { AppError } from '../common/app-error';
+import { NotFoundError } from '../common/not-found-error';
+import { BadRequestError } from '../common/bad-request-error';
 
 @Component({
   selector: 'app-posts',
@@ -20,15 +22,17 @@ export class PostsComponent implements OnInit {
   //ngOnInit is called in component creation lifycycle
   ngOnInit() {
     //http.get() returns Obserable, which has subscribe()
-    this.service.getPost()
-        .subscribe( 
-          response =>{
-            this.posts = response
-          }, 
-          error => {
-            alert('An unexpected error occurred')
-            console.log(error)
-          })
+    this.service.getAll()
+    .subscribe( posts => this.posts = posts)
+        // .subscribe( 
+        //   response =>{
+        //     this.posts = response
+        //   })
+          // }, 
+          // error => {
+          //   alert('An unexpected error occurred')
+          //   console.log(error)
+          // })
     
     // this.http.get(this.url)
     //     .subscribe( response => {
@@ -39,19 +43,23 @@ export class PostsComponent implements OnInit {
 
   createPost(input: HTMLInputElement) {
     let post = { title: input.value }
-    this.service.createPost(post)
-        .subscribe( 
-          response => {
-            post['id'] = response['id']
-            this.posts.splice(0, 0, post)
-          }, 
-          (error: HttpResponse<any>) => {
-            if (error.status === 400){
 
-            }else{
-              alert('An unexpected error occurred')
-              console.log(error)   
-            }              
+    input.value = ''
+    
+    this.service.create(post)
+        .subscribe(
+          id => {
+            post['id'] = id
+            this.posts.splice(0, 0, post)},
+        // .subscribe( 
+        //   response => {
+        //     post['id'] = response['id']
+        //     this.posts.splice(0, 0, post)
+        //   }, 
+          (error: AppError) => {
+            if (error instanceof BadRequestError){
+
+            }else throw error
           })
     // this.http.post(this.url, JSON.stringify(post) )
     //           .subscribe( response => {
@@ -65,15 +73,13 @@ export class PostsComponent implements OnInit {
   updatePost(post){
     console.log('update '+JSON.stringify(post))
     post['isRead'] = true
-    this.service.updatePost(post)
-        .subscribe(
-          response => {
-            console.log('Update Response: ' + JSON.stringify(response))
-        }, 
-          error => {
-            alert('An unexpected error occurred')
-            console.log(error)
-          })
+    this.service.update(post)
+        .subscribe()
+        // , 
+        //   error => {
+        //     alert('An unexpected error occurred')
+        //     console.log(error)
+        //   })
     // this.http.patch(this.url+'/'+post.id, JSON.stringify({ isRead:true }))
     //          .subscribe( response => {
     //            console.log('Response: ' + JSON.stringify(response))
@@ -82,21 +88,16 @@ export class PostsComponent implements OnInit {
   }
 
   deletePost(post){
-    this.service.deletePost(post.id) 
+    this.service.delete(post.id) 
         .subscribe(
-          response => {
+          () => {
             let index = this.posts.indexOf(post)
             this.posts.splice(index, 1)
-            console.log(response)
-          }, 
-          (error: HttpResponse<any>) => {
-            if (error.status === 404){
+          },    
+          (error: AppError) => {
+            if (error instanceof NotFoundError){
               alert("This post is already deleted")
-            } else {
-              alert('An unexpected error occurred')
-              console.log(error)
-            }
-            
+            }        
           })
   }
 
