@@ -28,8 +28,8 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'followers/:userid/:username', component: GithubProfileComponent },
       { path: 'followers', component: FollowersComponent },
-      { path: 'profile/:username', component: GithubProfileComponent },
       { path: 'posts', component: PostsComponent },
       { path: '**', component: NotFoundComponent }
     ])
