@@ -1,9 +1,12 @@
 <div *ngFor="let follower of followers" class="media">
   <div class="media-left">
-      <img src="{{ follower.avatar_url }}" class="media-object" class="protrait">
+      <img src="{{ follower.avatar_url }}" class="media-object protrait">
   </div>
   <div class = "media-body">
-    <h5 class="media-heading">{{ follower.login}}</h5>
-    <a href="follower.html_url">{{ follower.html_url }}</a>
-  </div>
+    <h5 class="media-heading">
+      <!-- <a routerLink="/followers/{{follower.id}}"></a>  This also works-->
+      <a [routerLink]="['/followers', follower.id, follower.login]">{{ follower.login }}</a>
+    </h5>
+    <a href="follower/html_url">{{ follower.html_url }}</a>
+  </div> 
 </div>
