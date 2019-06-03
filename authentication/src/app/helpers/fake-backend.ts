@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { getLocaleExtraDayPeriods } from '@angular/common';
 
 @Injectable()
 export class FakeBackendIntercepter implements HttpInterceptor{
         
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     const {url, method, headers, body } = req
+    console.log(req)
     let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA'
     let orders = [1, 2, 3]
     return of(null)
@@ -33,10 +33,11 @@ export class FakeBackendIntercepter implements HttpInterceptor{
     }
 
     function authenticate(){
+      const { email, password } = JSON.parse(body);
       console.log(body)
-      const { username, password } = body;
+      console.log(email + " " + password)
       console.log(token)
-      if (body.email === 'mosh@domain.com' && body.password === '1234') {
+      if (email === 'mosh' && password === '1234') {
         console.log("Authentication succeed")
         return ok({token: token})
       }
