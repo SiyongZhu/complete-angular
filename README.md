@@ -33,7 +33,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Add Bootstrap
 
 Run `npm install bootstrap --save` to generate a bootstrap module in node_module folder \
-Run `npm install --save font-awesome angular-font-awesome` to generate font-awesome module
+Run `npm install --save font-awesome angular-font-awesome` to generate font-awesome module \
+Run `npm install @auth0/angular-jwt --save` to install JWT
 
 ## Check modules and versions
 
