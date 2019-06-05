@@ -14,6 +14,8 @@ import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { fakeBackendProvider } from './helpers/fake-backend';
+import { AuthGuard } from './services/auth-guard.service';
+import { AdminAuthGuard } from './services/admin-auth-guard.service';
 
 
 
@@ -36,7 +38,7 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'admin', component: AdminComponent },
+      { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminAuthGuard] }, //Attach a class that implements canActiviate to safe guard authorized access
       { path: 'login', component: LoginComponent },
       { path: 'no-access', component: NoAccessComponent }
     ])

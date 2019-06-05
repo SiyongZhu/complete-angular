@@ -1,4 +1,3 @@
-// WARNING: This Mock backend is depreciated, we can still use this to understand the backend logic
 //https://jasonwatmore.com/post/2019/05/02/angular-7-mock-backend-example-for-backendless-development
 //https://blog.angularindepth.com/the-new-angular-httpclient-api-9e5c85fe3361
 
@@ -39,7 +38,9 @@ export class FakeBackendIntercepter implements HttpInterceptor{
       console.log(token)
       if (email === 'mosh' && password === '1234') {
         console.log("Authentication succeed")
-        return ok({token: token})
+        return ok({username: 'mosh', 
+                   admin: false,
+                   token: token})
       }
       return ok()
     }
