@@ -48,7 +48,7 @@ export class AuthService {
     if (!token) return null
     else{
       console.log("admin " + localStorage.getItem('admin'))
-      return {name: localStorage.getItem('username'),
+      return {name: localStorage.getItem('username'), 
               admin: localStorage.getItem('admin')}
     }
 

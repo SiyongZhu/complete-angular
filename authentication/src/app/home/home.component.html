@@ -3,7 +3,7 @@
   Welcome {{ authService.currentUser.name }}
 </p>
 <ul>
-  <li *ngIf="authService.isLoggedIn() && authService.currentUser.admin">
+  <li *ngIf="authService.isLoggedIn() && (authService.currentUser.admin==='true') ">
     <a routerLink="/admin">Admin</a>
   </li>
   <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login">Login</a></li>

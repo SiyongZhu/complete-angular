@@ -39,7 +39,7 @@ export class FakeBackendIntercepter implements HttpInterceptor{
       if (email === 'mosh' && password === '1234') {
         console.log("Authentication succeed")
         return ok({username: 'mosh', 
-                   admin: false,
+                   admin: 'false',
                    token: token})
       }
       return ok()
