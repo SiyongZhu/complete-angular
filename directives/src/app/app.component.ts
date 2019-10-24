@@ -36,6 +36,8 @@ export class AppComponent {
   }
 
   trackCourse(index, course){
+    //this function defines how angular track objects, 
+    //if a course obj exists, it will track changes on course id
     return course ? course.id: undefined
   }
 

@@ -17,6 +17,8 @@ import { CoursesService } from './courses.service';
         <input [(ngModel)]="name" (keyup.enter)="TwoWayBind()" />
     ` //whenever html has <courses>, template will be put inside of it
       // <button> shows class binding and style binding, active is a type of class
+            //class "active" will be added to <button> when isActive=true
+            //css background style can be added to <button> with isActive as well
       // <input> examples are to show event filtering, template variable and two-way binding
       // use ngModel is the recommended method approach to bind DOM value to variable
 })
@@ -33,7 +35,9 @@ export class CourseComponent {
     //     this.courses = service.getCourses()
     // }
 
+    //Dependency Injection means inject object in constructor 
     //inject CourseService decouple the service layer with presentation layer
+    //Remember to register the service under provider in app.module.ts, or in service class, set under in @Injectable{} 
     constructor(service: CoursesService) {
         this.courses = service.getCourses()
     }
@@ -54,14 +58,16 @@ export class CourseComponent {
     }
 
     //this is the same as onKeyUp($event), except the keyCode check is done through event filtering
-    //variable is also defined in the <input #email>
+    //variable 'email' is defined in the <input #email>
     inputKeyUp(email: String) { 
         console.log(email)
         console.log(`ENTER is pressed through event filtering: ${email}`)
     }
 
+    //Tradtionally, only model will define variable on view, changing value from view will not affect model
     //use two way binding need to import FormsModule in app.module
     //this.name is now bind to <input [(ngModel)]="name">
+    //it means model and view are bind together, change one will affect the other
     TwoWayBind() {
         console.log(this.name)
     }

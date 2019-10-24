@@ -72,7 +72,7 @@ Save</button>
 <!-- if the assigned value does not exist, and we don't want to output error -->
 <!-- both operations below work  -->
 <span *ngIf="task.assignee">{{ task.assignee.name }}</span>
-<span>{{ task.assignee?.name }}</span>
+<span>{{ task.assignee?.name }}</span> <!-- use ? means value will not show if it is null. It is safe traversal object -->
 
 <input type="text" appInputFormat [format]="'uppercase'"><br/><br/>
 
