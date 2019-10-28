@@ -15,15 +15,15 @@ export class GithubProfileComponent implements OnInit {
     // params has a key 'userid' b/c in RouteModule we set path to be follower/:username
     this.route.paramMap
       .subscribe(params => {
-        let userId = +params.get('userid') //using + to convert a string to a number
-      })
+        const userId = +params.get('userid'); // using + to convert a string to a number
+      });
   }
 
-  //programmatically re-route to different URL
-  submit(){
+  // programmatically re-route to different URL
+  submit() {
     this.router.navigate(['/followers'], {
       queryParams: { page: 1, order: 'newest' }
-    })
+    });
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FollowersService } from '../services/followers.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, combineLatest } from 'rxjs';
-import { switchMap } from 'rxjs/operators'
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-followers',
@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs/operators'
 })
 export class FollowersComponent implements OnInit {
 
-  followers: any
+  followers: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class FollowersComponent implements OnInit {
     // let userId = this.route.snapshot.paramMap.get('userid')
     // let page = this.route.snapshot.queryParamMap.get('page')
 
-    //We can subscribe to two Observables by using combineLatest()
+    // We can subscribe to two Observables by using combineLatest()
     // combineLatest([
     //   this.route.paramMap,
     //   this.route.queryParamMap
@@ -44,11 +44,11 @@ export class FollowersComponent implements OnInit {
       this.route.queryParamMap
     ])
     .pipe(switchMap(combined => {
-      let userId = combined[0].get('userid')
-      let page = combined[1].get('page')
-      return this.service.getAll()
+      const userId = combined[0].get('userid');
+      const page = combined[1].get('page');
+      return this.service.getAll();
     }))
-    .subscribe(followers => this.followers = followers)
+    .subscribe(followers => this.followers = followers);
   }
 
 }

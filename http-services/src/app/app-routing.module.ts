@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PostsComponent } from './posts/posts.component'
+import { PostsComponent } from './posts/posts.component';
 import { FollowersComponent } from './followers/followers.component';
 import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'followers', component: FollowersComponent },
       { path: 'posts', component: PostsComponent },
       { path: 'departments', component: DepartmentListComponent },
-      { path: 'departments/:id', 
+      { path: 'departments/:id',
         component: DepartmentDetailComponent,
         children: [
           { path: 'overview', component: DepartmentOverviewComponent},
@@ -35,6 +35,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, PostsComponent, GithubProfileComponent, 
-  FollowersComponent, NotFoundComponent, DepartmentListComponent, EmployeeListComponent, 
-  DepartmentDetailComponent, DepartmentOverviewComponent, DepartmentContactComponent]
+export const routingComponents = [HomeComponent, PostsComponent, GithubProfileComponent,
+  FollowersComponent, NotFoundComponent, DepartmentListComponent, EmployeeListComponent,
+  DepartmentDetailComponent, DepartmentOverviewComponent, DepartmentContactComponent];

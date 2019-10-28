@@ -11,56 +11,56 @@ import { BadRequestError } from '../common/bad-request-error';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts: any
-  
+  posts: any;
 
-  constructor(private service: PostService) { //set private variable http
-    //We should keep constructor light weighted, 
-    //not overload it with too many operations
+
+  constructor(private service: PostService) { // set private variable http
+    // We should keep constructor light weighted,
+    // not overload it with too many operations
   }
 
-  //ngOnInit is called in component creation lifycycle
+  // ngOnInit is called in component creation lifycycle
   ngOnInit() {
-    //http.get() returns Obserable, which has subscribe()
+    // http.get() returns Obserable, which has subscribe()
     this.service.getAll()
-    .subscribe( posts => this.posts = posts)
-        // .subscribe( 
+    .subscribe( posts => this.posts = posts);
+        // .subscribe(
         //   response =>{
         //     this.posts = response
         //   })
-          // }, 
+          // },
           // error => {
           //   alert('An unexpected error occurred')
           //   console.log(error)
           // })
-    
+
     // this.http.get(this.url)
     //     .subscribe( response => {
     //       console.log(response)
     //       this.posts = response
-    //     }) 
+    //     })
   }
 
   createPost(input: HTMLInputElement) {
-    let post = { title: input.value }
+    const post = { title: input.value };
 
-    input.value = ''
-    
+    input.value = '';
+
     this.service.create(post)
         .subscribe(
           id => {
-            post['id'] = id
-            this.posts.splice(0, 0, post)},
-        // .subscribe( 
+            post.id = id;
+            this.posts.splice(0, 0, post); },
+        // .subscribe(
         //   response => {
         //     post['id'] = response['id']
         //     this.posts.splice(0, 0, post)
-        //   }, 
+        //   },
           (error: AppError) => {
-            if (error instanceof BadRequestError){
+            if (error instanceof BadRequestError) {
 
-            }else throw error
-          })
+            } else { throw error; }
+          });
     // this.http.post(this.url, JSON.stringify(post) )
     //           .subscribe( response => {
     //             post['id'] = response['id']
@@ -70,12 +70,12 @@ export class PostsComponent implements OnInit {
     //           })
   }
 
-  updatePost(post){
-    console.log('update '+JSON.stringify(post))
-    post['isRead'] = true
+  updatePost(post) {
+    console.log('update ' + JSON.stringify(post));
+    post.isRead = true;
     this.service.update(post)
-        .subscribe()
-        // , 
+        .subscribe();
+        // ,
         //   error => {
         //     alert('An unexpected error occurred')
         //     console.log(error)
@@ -87,18 +87,18 @@ export class PostsComponent implements OnInit {
     // this.http.put(this.url, JSON.stringify(post))
   }
 
-  deletePost(post){
-    this.service.delete(post.id) 
+  deletePost(post) {
+    this.service.delete(post.id)
         .subscribe(
           () => {
-            let index = this.posts.indexOf(post)
-            this.posts.splice(index, 1)
-          },    
+            const index = this.posts.indexOf(post);
+            this.posts.splice(index, 1);
+          },
           (error: AppError) => {
-            if (error instanceof NotFoundError){
-              alert("This post is already deleted")
-            }        
-          })
+            if (error instanceof NotFoundError) {
+              alert('This post is already deleted');
+            }
+          });
   }
 
 }

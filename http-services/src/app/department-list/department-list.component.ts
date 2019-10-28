@@ -12,36 +12,36 @@ import { IDepartment } from '../models/department';
   <ul class="list-group">
     <li (click)="onSelect(dep)" class="list-group-item" [className]="isSelected(dep)? 'fa fa-hand-o-right' : ''" *ngFor="let dep of departments">
       <span class="bandge">{{dep.id}}</span>  {{dep.name}}
-    </li> 
+    </li>
   </ul>
   `
 })
 export class DepartmentListComponent implements OnInit {
 
-  public departments : IDepartment[]
-  public selectedId: number
+  public departments: IDepartment[];
+  public selectedId: number;
 
-  constructor(private router:Router, private route: ActivatedRoute,
-     private departmentService: DepartmentService ) { }
+  constructor(private router: Router, private route: ActivatedRoute,
+              private departmentService: DepartmentService ) { }
 
   ngOnInit() {
     this.departmentService.getDepartments()
-      .subscribe(data => this.departments = data)
+      .subscribe(data => this.departments = data);
     this.route.paramMap.subscribe((params: ParamMap) => {
-      let id = parseInt(params.get('id'))
-      this.selectedId = id
-    })
+      const id = parseInt(params.get('id'));
+      this.selectedId = id;
+    });
   }
 
   onSelect(department) {
     // this.router.navigate(['/departments', department.id])
-    this.router.navigate([department.id], {relativeTo: this.route})
+    this.router.navigate([department.id], {relativeTo: this.route});
   }
 
   isSelected(department): boolean {
-    return department.id === this.selectedId
+    return department.id === this.selectedId;
   }
 
-  
+
 
 }

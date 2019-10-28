@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class DepartmentService {
 
-  private _url: string = "/assets/departments.json"
+  private _url = '/assets/departments.json';
   constructor(private http: HttpClient) { }
 
   getDepartments(): Observable<IDepartment[]> {
-    return this.http.get<IDepartment[]>(this._url)
+    return this.http.get<IDepartment[]>(this._url);
   }
 }
