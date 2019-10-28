@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-sm bg-light">
   <ul class="navbar-nav">
     <li class="nav-item" routerLinkActive="active current">
+      <a class="nav-link" routerLink="/">Home</a>
+    </li>
+    <li class="nav-item" routerLinkActive="">
       <!-- <a class="nav-link" href="#">Followers</a> -->
       <a class="nav-link" routerLink="/followers" 
           [queryParams]="{ page: 1, order: 'newest'}">Followers</a> 

@@ -26,16 +26,35 @@ npm install -g @angular/cli
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Start new project
+
+Run `ng new [project_name] --routing `, add routing means you have `app-routing.module.ts` to manage routing
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Add Bootstrap
-
+[How to include Bootstrap](https://stackoverflow.com/questions/43557321/angular-4-how-to-include-bootstrap) \
+Run `npm install jquery --save` to generate a bootstrap module in node_module folder \
+Run `npm install popper.js --save` to generate a bootstrap module in node_module folder \
 Run `npm install bootstrap --save` to generate a bootstrap module in node_module folder \
 Run `npm install --save font-awesome angular-font-awesome` to generate font-awesome module \
 Run `npm install @auth0/angular-jwt --save` to install JWT  \
-In style.css, add the following
+Under angular.json, add 
+```
+"styles": [   
+    "node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "node_modules/font-awesome/css/font-awesome.css",
+    "styles.css"
+  ],
+  "scripts": [  
+    "node_modules/jquery/dist/jquery.min.js",
+    "node_modules/popper.js/dist/umd/popper.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ],
+```
+OR: In style.css, add the following
 ```
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
@@ -47,6 +66,10 @@ In style.css, add the following
 check package.json to see if libraries are installed and versions are matched\
 Run `npm install` to install node-modules.
 
+## Angular Compile
+```
+$node_modules/.bin/ngc
+```
 
 ## Build
 
