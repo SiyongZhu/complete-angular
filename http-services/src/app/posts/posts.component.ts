@@ -49,7 +49,7 @@ export class PostsComponent implements OnInit {
     this.service.create(post)
         .subscribe(
           id => {
-            post.id = id;
+            post['id'] = id;
             this.posts.splice(0, 0, post); },
         // .subscribe(
         //   response => {
