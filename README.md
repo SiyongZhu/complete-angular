@@ -34,12 +34,13 @@ Run `ng new [project_name] --routing `, add routing means you have `app-routing.
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Add Bootstrap
+## Add External Tools
 [How to include Bootstrap](https://stackoverflow.com/questions/43557321/angular-4-how-to-include-bootstrap) \
 Run `npm install jquery --save` to generate a bootstrap module in node_module folder \
 Run `npm install popper.js --save` to generate a bootstrap module in node_module folder \
 Run `npm install bootstrap --save` to generate a bootstrap module in node_module folder \
 Run `npm install --save font-awesome angular-font-awesome` to generate font-awesome module \
+Run `npm install firebase @angular/fire --save` to generate font-awesome module \
 Run `npm install @auth0/angular-jwt --save` to install JWT  \
 Under angular.json, add 
 ```
