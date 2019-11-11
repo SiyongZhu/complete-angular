@@ -1,0 +1,207 @@
+<div class="container">
+    <h1 class="text-center">Form Controls</h1>
+    <form>
+        <div class="form-group"> <!-- use form-group to group forms together -->
+            <label for="ur_email">Email Address</label> 
+            <input type="email" id="ur_email" class="form-control" placeholder="enter your email">      
+        </div>
+        <div class="form-group">
+            <label for="ur_pw">Password</label>
+            <input type="password" id="ur_pw" class="form-control" placeholder="enter your password">
+            <small class="text-muted">Password must be 8 characters</small>
+        </div>
+        <div class="form-group">
+            <label for="select">Select</label>
+            <select id="select" class="form-control">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="multiselect">Multi-Select</label>
+            <select multiple id="multiselect" class="form-control"> <!-- add multiple in select tag make it multi selectable -->
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ur_text">Input words</label>
+            <textarea id="ur_text" rows="10" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="ur_file">Pick a file</label>
+            <input type="file" id="ur_file" class="form-control-file">
+        </div>
+
+        <div class="form-group">
+            <label for="ur_range">Range Input</label>
+            <input type="range" id="ur_range" class="form-control-range">
+        </div>
+
+        <div class="form-group"> 
+            <label for="ur_email_lg">Email Address Large</label> 
+            <input type="email" id="ur_email_lg" class="form-control form-control-lg" placeholder="enter your email">      
+        </div>
+        <input type="submit" value="submit" class="btn btn-lg btn-primary">
+    </form>
+</div>
+
+
+<div class="container">
+    <h1 class="text-center">Form Checks</h1>
+    <div class="form-group">
+        <h4>Checkboxes (Allow Multiple)</h4>
+        <div class="form-check">
+            <input disabled class="form-check-input" type="checkbox" name="" id="chick">
+            <label class="form-check-label" for="chick">Chickens</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="" id="cats">
+            <label class="form-check-label pt-1" for="cats">Cats</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="" id="rabbits">
+            <label class="form-check-label pt-1" for="rabbits">Rabbits</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <h4>Radio Buttons (Only One)</h4>
+        <!-- set all radio with same name will force it to be unique-->
+        <div class="form-check">
+            <input disabled class="form-check-input" type="radio" name="meat" id="chick">
+            <label class="form-check-label" for="chick">Chickens</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="meat" id="cats">
+            <label class="form-check-label pt-1" for="cats">Cats</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="meat" id="rabbits">
+            <label class="form-check-label pt-1" for="rabbits">Rabbits</label>
+        </div>
+    </div>
+    <div class="form-group mt-5">
+        <h4>Inline Form check</h4>
+        <!-- set all radio with same name will force it to be unique-->
+        <div class="form-check form-check-inline">
+            <input disabled class="form-check-input" type="radio" name="meat" id="chick">
+            <label class="form-check-label" for="chick">Chickens</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="meat" id="cats">
+            <label class="form-check-label pt-1" for="cats">Cats</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="meat" id="rabbits">
+            <label class="form-check-label pt-1" for="rabbits">Rabbits</label>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center">Custom Inputs</h1>
+        <h4>Checkboxes</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="" id="regularcheck">
+            <label class="form-check-label" for="regularcheck">I am a regular checkbox</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">I am a custom checkbox</label>
+        </div>
+        <h4>Radio Buttons</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio"  id="regularradio" >
+            <label class="form-check-label" for="regularradio">I am a regular radio button</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+        </div>
+        <h4>File Inputs</h4>
+        <div class="form-group">
+            <label for="regularFile">Regular File Input</label>
+            <input type="file" class="form-control-file" id="regularFile">
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <h4>Range Inputs</h4>
+        <div class="form-group">
+            <label for="regularrange">Regular Range Input</label>
+            <input type="range" class="form-control-range" id="regularrange">
+        </div>
+        <div class="form-group">
+            <label for="customRange1">Custom Range</label>
+            <input type="range" class="custom-range" id="customRange1" min="0" max="3">
+        </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center">Input Groups and Icons</h1>
+    <form>
+        <div class="input-group mb-3"> <!-- add input-group-lg[sm] after input-group to control for size-->
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Enter a price"> <!-- any input type can work in here, radio, checkbox etc -->
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">  
+            <input type="text" class="form-control" placeholder="search">
+            <div class="input-group-append">
+                <button class="btn btn-success">Go</button>
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" placeholder="Enter Username">
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-key"></i>
+                    </span>
+                </div>
+                <input type="password" class="form-control" placeholder="Enter password">
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container"> 
+    <h1 class="text-center">Inline Form</h1>
+    <form action="" class="form-inline">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-user"></i>
+                </span>
+            </div>
+            <input type="text" class="form-control">
+        </div>
+        <div class="input-group ml-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fa fa-key"></i>
+                </span>
+            </div>
+            <input type="password" class="form-control">
+        </div>
+    </form>
+</div>
