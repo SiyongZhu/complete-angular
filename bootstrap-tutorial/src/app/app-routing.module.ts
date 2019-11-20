@@ -10,6 +10,8 @@ import { Sec08GridComponent } from './sec08-grid/sec08-grid.component';
 import { Sec08FormgridComponent } from './sec08-formgrid/sec08-formgrid.component';
 import { Sec09ListGroupsComponent } from './sec09-list-groups/sec09-list-groups.component';
 import { Sec09CardComponent } from './sec09-card/sec09-card.component';
+import { Sec10ComponentsComponent } from './sec10-components/sec10-components.component';
+import { Sec11JavascriptComponentsComponent } from './sec11-javascript-components/sec11-javascript-components.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
       { path: '08-grid', component: Sec08GridComponent},
       { path: '08-formgrid', component: Sec08FormgridComponent},
       { path: '09-listgroup', component: Sec09ListGroupsComponent},
-      { path: '09-card', component: Sec09CardComponent}
+      { path: '09-card', component: Sec09CardComponent},
+      { path: '10-components', component: Sec10ComponentsComponent},
+      { path: '11-javascript-components', component: Sec11JavascriptComponentsComponent}
 
 ];
 
@@ -35,5 +39,5 @@ export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, Sec04BasicComponent, Sec05UtilitiesComponent,
                                   Sec06FormComponent, Sec07FlexboxComponent, Sec07NavbarComponent,
                                   Sec08GridComponent, Sec08FormgridComponent, Sec09ListGroupsComponent,
-                                  Sec09CardComponent
+                                  Sec09CardComponent, Sec10ComponentsComponent, Sec11JavascriptComponentsComponent
                                 ];
