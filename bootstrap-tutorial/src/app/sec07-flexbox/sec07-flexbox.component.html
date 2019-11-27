@@ -1,0 +1,125 @@
+<div class="container">
+    <h1 class="text-center">Navs</h1>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="" class="nav-link active">First</a>  <!-- active for nav-link doesn't do anything-->
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Second</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Third</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link disabled">Fourth</a>
+        </li>
+    </ul>
+    <h3>Tabs</h3>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="" class="nav-link active">First</a> 
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Second</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Third</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link disabled">Fourth</a>
+        </li>
+    </ul>
+    <nav class="nav nav-tabs">
+        <a href="" class="nav-link nav-items active">Active</a>
+        <a href="" class="nav-link nav-items">Link</a>
+        <a href="" class="nav-link nav-items">Link</a>
+        <a href="" class="nav-link nav-items disabled">Disabled</a>
+    </nav>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a href="" class="nav-link active">First</a> 
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Second</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link">Third</a>
+        </li>
+        <li class="nav-item">
+            <a href="" class="nav-link disabled">Fourth</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container"> 
+    <h1 class="text-center">FlexBox Review</h1>
+    <div class="d-flex flex-column"> <!-- change the flexbox orientation to column-->
+        <!-- there are class "justified-content-[start/end/between/around]"" to change layout-->
+        <button class="btn btn-lg btn-danger">Button 1</button>
+        <button class="btn btn-lg btn-warning">Button 2</button>
+        <button class="btn btn-lg btn-success">Button 3</button>
+        <button class="btn btn-lg btn-info">Button 4</button>
+    </div>
+    <div class="d-flex border mt-5 align-items-start justify-content-center" style="height: 400px"> 
+        <!-- align-items-[start/end/center] move items vertically
+             justified-content-[start/end/center] move items horzentally -->
+        <button class="btn btn-lg btn-danger">Button 1</button>
+        <button class="btn btn-lg btn-warning">Button 2</button>
+        <button class="btn btn-lg btn-success">Button 3</button>
+        <button class="btn btn-lg btn-info">Button 4</button>
+    </div>
+    <div class="d-flex flex-column border mt-5 align-items-center justify-content-center" style="height: 400px"> 
+        <!-- align-items-[start/end/center] move items horzentally
+             justified-content-[start/end/center] move items vertically -->
+        <button class="btn btn-lg btn-danger">Button 1</button>
+        <button class="btn btn-lg btn-warning">Button 2</button>
+        <button class="btn btn-lg btn-success">Button 3</button>
+        <button class="btn btn-lg btn-info">Button 4</button>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center">FlexBox and Nav</h1>
+    <nav class="nav flex-column flex-sm-row"> <!-- add flex, make column when the window is smaller than sm--> 
+        <a href="" class="nav-link active">Active</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav justify-content-end"> <!-- add justify to arrange menu location--> 
+        <a href="" class="nav-link active">Active</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav justify-content-between"> <!-- add justify to arrange menu location--> 
+        <a href="" class="nav-link active">Active</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav justify-content-around"> <!-- add justify to arrange menu location--> 
+        <a href="" class="nav-link active">Active</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link">Link</a>
+        <a href="" class="nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav nav-pills"> 
+        <a href="" class="nav-item nav-link active">Active</a>
+        <a href="" class="nav-item nav-link">Link</a>
+        <a href="" class="nav-item nav-link">Link</a>
+        <a href="" class="nav-item nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav nav-pills nav-fill"> <!-- fill the nav item to the whole container--> 
+        <a href="" class="nav-item nav-link">Link</a>
+        <a href="" class="nav-item nav-link active">Link Extra Long </a>
+        <a href="" class="nav-item nav-link">Link</a>
+        <a href="" class="nav-item nav-link disabled">Disable</a>
+    </nav>
+    <nav class="nav nav-pills nav-justified"> <!-- each nav item have equal length--> 
+        <a href="" class="nav-item nav-link active">Link</a>
+        <a href="" class="nav-item nav-link active">Link Extra Long</a>
+        <a href="" class="nav-item nav-link">Link</a>
+        <a href="" class="nav-item nav-link disabled">Disable</a>
+    </nav>
+</div>

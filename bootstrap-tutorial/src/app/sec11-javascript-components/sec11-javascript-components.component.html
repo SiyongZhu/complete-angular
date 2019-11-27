@@ -1,0 +1,226 @@
+<div class="container">
+    <h1>Alerts</h1>
+    <div class="alert alert-success">
+        Congrats! Your change is saved
+    </div>
+    <div class="alert alert-danger">
+        <h4 class="alert-heading">Watch Out</h4>
+        You are deleting unsaved <a href="" class="alert-link">files</a>
+    </div>
+    <div class="alert alert-warning alert-dismissible">
+        <h4 class="alert-heading">Watch Out</h4>
+        You are deleting unsaved <a href="" class="alert-link">files</a>
+        <button class="close" data-dismiss="alert">&times;</button>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Tooltips</h1>
+    <button class="btn btn-info" data-toggle="tooltip" data-placement="right" title="tooltip on right">Hover on Me</button>
+</div>
+
+<div class="container">
+    <h1 class="display-4 text-center">Dropdowns</h1>
+    <div class="dropdown">
+        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Click Me</button>
+        <div class="dropdown-menu">
+            <a href="" class="dropdown-item">Home</a>
+            <a href="" class="dropdown-item">Contact</a>
+            <a href="" class="dropdown-item">About</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-warning btn-lg dropdown-toggle" data-toggle="dropdown">Click Me</button>
+        <div class="dropdown-menu">
+            <a href="" class="dropdown-item">Home</a>
+            <a href="" class="dropdown-item">Contact</a>
+            <a href="" class="dropdown-item">About</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Header&Divider</button>
+        <div class="dropdown-menu">
+            <h6 class="dropdown-header">This is  a header</h6>
+            <a href="" class="dropdown-item">Home</a>
+            <a href="" class="dropdown-item">Contact</a>
+            <a href="" class="dropdown-item">About</a>
+            <div class="dropdown-divider"></div>
+            <a href="" class="dropdown-item">Sign Out</a> 
+            <a href="" class="dropdown-item">Sign Up</a>
+        </div>
+    <!-- note: Dropdown can also include form by add form under the tag-->
+    </div>
+      
+    <div class="btn-group">
+        <button class="btn btn-danger">Start</button>
+        <button class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+            <a href="" class="dropdown-item">Stop</a>
+            <a href="" class="dropdown-item">Restart</a>
+            <a href="" class="dropdown-item">Pause</a>
+        </div>
+    </div>
+
+    <!-- Add dropdown on navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="" class="navbar-brand">Navbar Dropdown</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Feature</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Items</a>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">item1</a>
+                        <a href="" class="dropdown-item">item2</a>
+                        <a href="" class="dropdown-item">item3</a>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container mb-1">
+    <h1 class="text-center">Collapse</h1>
+    <a href="#text-content" class="btn btn-success" data-toggle="collapse">Click Me</a>
+    <button class="btn btn-info" data-toggle="collapse" data-target="#text-content">Or Click Me</button>
+    <div class="collapse" id="text-content">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Collapse Me</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dolor odio earum tempore illum. Natus eum repellendus possimus cum aut voluptatibus sunt itaque excepturi explicabo enim quasi soluta rerum rem libero minus temporibus voluptatem laudantium laborum, illum est. Ratione accusantium, at provident ipsa officia ad suscipit. Consequatur vel doloribus neque.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Need top enable tooltip in the script for tooltip to work-->
+
+<div class="container mt-1">
+    <h1 class="text-center">Accordion</h1>
+    <div id="accordionContainer">
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#part1">Part 1</button>
+            </div>
+            <div class="collapse show" id="part1" data-parent="#accordionContainer"> <!-- set data-parent ensures only one collapse can be shown-->
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia et neque reprehenderit inventore ex cupiditate expedita, impedit veniam accusantium! Doloribus voluptas, aliquid sit mollitia fugit earum dicta atque quod maiores magnam officiis praesentium molestiae autem! Quia cupiditate mollitia error natus?
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#part2">Part 2</button>
+            </div>
+            <div class="collapse" id="part2" data-parent="#accordionContainer">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia et neque reprehenderit inventore ex cupiditate expedita, impedit veniam accusantium! Doloribus voluptas, aliquid sit mollitia fugit earum dicta atque quod maiores magnam officiis praesentium molestiae autem! Quia cupiditate mollitia error natus?
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#part3">Part 3</button>
+            </div>
+            <div class="collapse" id="part3" data-parent="#accordionContainer">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia et neque reprehenderit inventore ex cupiditate expedita, impedit veniam accusantium! Doloribus voluptas, aliquid sit mollitia fugit earum dicta atque quod maiores magnam officiis praesentium molestiae autem! Quia cupiditate mollitia error natus?
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container"> 
+    <h1 class="text-center">Modal</h1>
+    <button class="btn btn-info" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Title</h5>
+                    <button class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat error odit ducimus at soluta reiciendis, odio explicabo porro doloremque accusantium!
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<div class="container"> 
+    <h1 class="text-center">Scrollspy</h1>
+    <nav class="navbar navbar-light bg-light" id="mainNavbar">
+        <a href="" class="navbar-brand">Scrollspy</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="#help" class="nav-link">Help</a>
+            </li>
+            <li class="nav-item">
+                <a href="#blog" class="nav-link">Blog</a>
+            </li>
+        </ul>
+    </nav>
+    <div data-spy="scroll" data-target="#mainNavbar" class="container" style="position: relative; height: 500px; overflow-y: scroll;">
+        <h2 id="about">About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia neque cupiditate tenetur, autem unde laudantium sed quae, dolorum optio facilis aspernatur. Aperiam necessitatibus quis voluptas quod consectetur dolorem alias aut, placeat natus ut, unde maiores soluta debitis temporibus voluptatem, odit id corporis accusantium impedit cumque! Expedita iure, a neque voluptas, quis fugit, assumenda ipsum reprehenderit repellendus at modi debitis mollitia nulla quam libero provident minima dignissimos laudantium voluptatem similique vel. Saepe, maiores veniam facere distinctio libero dicta autem aperiam debitis facilis. Numquam voluptatum quae et, fuga eaque ullam fugit, temporibus illum quod dignissimos laboriosam perferendis alias, provident repellendus hic nemo corrupti sequi doloremque consectetur expedita molestiae neque! Accusantium, in exercitationem natus officia quos ullam, enim et odio nemo maxime facere ex ut, pariatur minus! Enim error ipsum asperiores maxime debitis cum in officia ratione, deleniti quam, eaque ab natus ea? Natus, ratione repellat repudiandae quis sequi vero, nesciunt saepe maxime reiciendis quibusdam quas rerum harum veniam similique unde maiores. Quae corrupti esse sit velit quia voluptatum voluptate quasi culpa cum sapiente, vero ea, magnam adipisci autem in, dignissimos fugit. Velit adipisci vitae recusandae error voluptatum totam laudantium aliquid sint magni sed, aliquam necessitatibus incidunt ex cumque similique vero. Quibusdam hic explicabo obcaecati aliquam, natus reiciendis dolores eius cum accusantium aspernatur magni quo magnam doloremque nostrum earum in. Dolor fuga inventore quia. Dicta delectus sapiente recusandae est? At distinctio ducimus cum modi eaque quos, odio necessitatibus sequi earum natus suscipit, magni repellendus, adipisci quam ex repellat explicabo. Velit doloremque iure similique in vel, fuga est sit aliquid veritatis facere voluptate maxime quis nesciunt minus molestiae accusantium quam vero accusamus corrupti ab? Quia repellat nihil fugiat rerum temporibus praesentium. Quibusdam labore unde dignissimos culpa quia! Alias autem reprehenderit cum fugit perspiciatis voluptatum eius iure, error sed beatae mollitia adipisci optio inventore magni.</p>
+        <h2 id="contact">Contact</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusamus, perferendis repudiandae eligendi molestiae id eaque accusantium debitis fuga consequatur? Itaque tempore sint, nostrum voluptas quas at quibusdam sapiente voluptatibus id expedita quis, quod aperiam magnam corrupti quo totam, cupiditate exercitationem fugiat. Aspernatur adipisci ipsam tenetur ab qui illum ea itaque provident ex laboriosam dolores quos aliquam, nulla assumenda optio quisquam consequatur iure ipsum a impedit deleniti vitae. Ea dicta pariatur quam dolor, architecto est nihil ipsum molestiae doloremque ducimus porro, hic neque praesentium debitis quod rerum expedita nesciunt? Tempore, esse debitis ipsum cum beatae eveniet est unde facilis. Mollitia!</p>
+        <h2 id="help">Help</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id molestias natus, nihil sapiente ad tenetur earum, eveniet suscipit hic aliquid mollitia laborum unde nulla reiciendis aliquam facilis? Quo tenetur eos accusamus sequi aspernatur doloremque at officiis nisi commodi, facere voluptate dolore adipisci consectetur iusto saepe maiores animi? Commodi iste hic temporibus ipsa, perspiciatis iusto? Porro vitae ipsa autem unde dolorem est? Earum vitae quam voluptate fugiat obcaecati nemo ducimus at modi accusamus impedit nisi eum alias minima harum, unde quos officiis aliquam molestias natus quo perferendis adipisci facilis? Voluptate, harum dolor reprehenderit, corrupti quas laboriosam qui enim modi a nemo repudiandae minima. Dolor quam minus accusantium ducimus soluta asperiores tempore aliquam adipisci impedit distinctio ipsam, repellendus suscipit doloremque atque quasi dolores voluptatem corporis ab nostrum, sequi mollitia facilis. Ea quis quidem asperiores, illum optio blanditiis deserunt tempore deleniti error temporibus nemo eum impedit hic velit corrupti sunt repellat aut! Dolor quibusdam tempore officia, architecto et sunt! Ipsa aperiam amet harum, ducimus officia optio doloribus consectetur corporis libero maiores in suscipit eos quos molestias? Id pariatur perferendis sed vero optio dolorem est? Optio nemo rerum nulla obcaecati? Dolorem dolorum nisi sit dolores accusamus, illo, similique accusantium officia magni eligendi obcaecati, reiciendis laborum laudantium minima! Enim officiis repellendus officia possimus non accusantium placeat reprehenderit cumque quo nobis. Quasi ducimus nostrum earum officia commodi sapiente at expedita quam impedit aperiam, aliquam illum maxime iste in facere totam, provident deleniti iure architecto recusandae amet a exercitationem ab. Velit perferendis cum quas sunt, quos minima. Aliquid iusto soluta blanditiis quo provident, voluptas aliquam voluptatem quae, laboriosam aut, magnam beatae in dolores. Mollitia, cumque placeat culpa tempora delectus voluptas quia sequi quae consequatur nesciunt eaque amet soluta illum facilis rem. Voluptate error doloremque vero est nemo autem cum nesciunt, voluptatibus non maiores? Earum distinctio consequuntur nostrum.</p>
+        <h2 id="blog">Blog</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos accusamus, perferendis repudiandae eligendi molestiae id eaque accusantium debitis fuga consequatur? Itaque tempore sint, nostrum voluptas quas at quibusdam sapiente voluptatibus id expedita quis, quod aperiam magnam corrupti quo totam, cupiditate exercitationem fugiat. Aspernatur adipisci ipsam tenetur ab qui illum ea itaque provident ex laboriosam dolores quos aliquam, nulla assumenda optio quisquam consequatur iure ipsum a impedit deleniti vitae. Ea dicta pariatur quam dolor, architecto est nihil ipsum molestiae doloremque ducimus porro, hic neque praesentium debitis quod rerum expedita nesciunt? Tempore, esse debitis ipsum cum beatae eveniet est unde facilis. Mollitia!</p>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 class="text-center">Carousel</h1>
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./assets/images/maxi.jpg" class="d-block w-100 h-50" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/images/kilik.png" class="d-block w-100 h-50" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/images/xianghua.jpg" class="d-block w-100 h-50" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+</script>

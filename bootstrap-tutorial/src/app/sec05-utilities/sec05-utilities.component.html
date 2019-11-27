@@ -1,0 +1,61 @@
+<body>
+    <p>Website</p>
+    <p>Come On</p>  
+</body>
+
+<div class="container"> 
+        <h1 class="bg-dark text-white">This is h1 block</h1>
+        <h1 class="bg-dark text-white d-inline">This is h1 inline</h1>
+        <h1 class="bg-dark text-white d-none">This is h1 Display-None (d-none)</h1>
+        <span class="bg-info text-white">I am a regular span</span>
+        <span class="bg-info text-white d-block">I am a block span</span>
+        <h1 class="d-none d-sm-block">HIDDEN ON XS (Extra Small) Size</h1>
+        <h1 class="d-none d-md-block">HIDDEN ON XS and SM</h1>
+</div>
+
+<div class="container">
+    <h1>Current breakpoint is: 
+        <span class="d-inline d-sm-none text-danger">XS</span>
+        <span class="d-none d-sm-inline d-md-none text-warning">SM</span>
+        <span class="d-none d-md-inline d-lg-none text-success">MD</span>
+        <span class="d-none d-lg-inline d-xl-none text-info">LG</span>
+        <span class="d-none d-xl-inline text-primary">XL</span>
+    </h1>
+</div>
+
+<div class="container">
+    <style>
+        .sm-box {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+    </style>
+    <div class="sm-box border"></div>
+    <div class="sm-box border-bottom"></div>
+    <div class="sm-box border-left border-right"></div>
+    <div class="sm-box border border-right-0"></div>
+    <div class="sm-box border border-info"></div>
+    <div class="sm-box border border-primary rounded"></div>
+    <div class="sm-box border border-warning rounded-circle"></div>
+    <h3 class="shadow-sm">Small Shadow</h3>
+    <h3 class="shadow">Regular Shadow</h3>
+    <h3 class="shadow-lg">Large Shadow</h3>
+</div>
+
+<div class="container">  
+    <h1 class="p-0 bg-info d-inline-block">padding=0</h1>
+    <h1 class="p-1 bg-info d-inline-block">padding=1</h1>
+    <h1 class="p-2 bg-info d-inline-block">padding-2</h1>
+    <h1 class="p-3 bg-info d-inline-block">padding-3</h1>
+    <h1 class="p-4 bg-info d-inline-block">padding-4</h1>
+
+    <button class="pt-5 btn btn-lg btn-warning">padding-top-5</button>
+    <button class="pb-5 btn btn-lg btn-warning">padding-bottom-5</button>
+    <button class="py-5 btn btn-lg btn-warning">padding-top&bottom-5</button>
+    <button class="pl-5 btn btn-lg btn-warning">padding-left-5</button>
+    <button class="pr-5 btn btn-lg btn-warning">padding-right-5</button>
+    <button class="px-5 btn btn-lg btn-warning">padding-lef&right-5</button>
+
+    <h1 class="m-4 bg-success d-inline-block">margin-4</h1>
+</div>
