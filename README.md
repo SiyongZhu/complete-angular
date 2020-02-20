@@ -9,7 +9,7 @@
 This is the tutorial from Udemy The Complete Angular Course: Beginner to Advanced
 
 **Install Angular to Mac**
-I have some issue install angular on Mac, follow the steps in here to resolve installation issues
+I have some issue install angular on Mac, follow the steps in here to resolve installation issues (This issue is resolved after macOS 10.15)
 
 First, download node js package from node js website, install to Mac
 Then run the following commands
@@ -25,6 +25,12 @@ npm install -g @angular/cli
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Production Server
+
+Install ngrok 
+Run `./ngrok http 4200`
+Run `ng serve --host 0.0.0.0 --disable-host-check`
 
 ## Start new project
 
